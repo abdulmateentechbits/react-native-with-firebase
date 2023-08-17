@@ -11,6 +11,7 @@ import { AppStackScreenProps } from "../navigators" // @demo remove-current-line
 import { colors, spacing } from "../theme"
 import { useHeader } from "../utils/useHeader" // @demo remove-current-line
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
+import notifee from '@notifee/react-native';
 
 const welcomeLogo = require("../../assets/images/logo.png")
 const welcomeFace = require("../../assets/images/welcome-face.png")
@@ -25,6 +26,30 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   const {
     authenticationStore: { logout },
   } = useStores()
+  async function onDisplayNotification() {
+    // Request permissions (required for iOS)
+    await notifee.requestPermission()
+
+    // Create a channel (required for Android)
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+    });
+
+    // Display a notification
+    await notifee.displayNotification({
+      title: 'Notification Title',
+      body: 'Main body content of the notification',
+      android: {
+        channelId,
+        // smallIcon: 'name-of-a-small-icon', // optional, defaults to 'ic_launcher'.
+        // pressAction is needed if you want the notification to open the app when pressed
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+  }
 
   function goNext() {
     navigation.navigate("Demo", { screen: "DemoShowroom" })

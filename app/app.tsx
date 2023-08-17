@@ -28,6 +28,7 @@ import { ErrorBoundary } from "./screens/ErrorScreen/ErrorBoundary"
 import * as storage from "./utils/storage"
 import { customFontsToLoad } from "./theme"
 import Config from "./config"
+import notifee, { AndroidImportance } from '@notifee/react-native';
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
@@ -91,6 +92,12 @@ function App(props: AppProps) {
     prefixes: [prefix],
     config,
   }
+  
+  notifee.registerForegroundService( notification => {
+    return new Promise( () => {
+  
+    } );
+  } );
 
   // otherwise, we're ready to render the app
   return (

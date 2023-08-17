@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "852606128837",
+    "project_id": "webrtc-video-calling-9c426",
+    "storage_bucket": "webrtc-video-calling-9c426.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852606128837:android:8465fca43569192d62d6ac",
+        "android_client_info": {
+          "package_name": "com.webrtc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852606128837-c2ke2ndtsbiglehb5kfon65nad1mnqmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAG2pE0ozqCpnvgP5NR-CWsuqqpMdzoPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852606128837-c2ke2ndtsbiglehb5kfon65nad1mnqmb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
