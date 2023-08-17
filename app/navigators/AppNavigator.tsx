@@ -66,13 +66,13 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false, navigationBarColor: colors.background }}
-      initialRouteName={isAuthenticated ? "Welcome" : "Login"} // @demo remove-current-line
+      initialRouteName={isAuthenticated ? "Demo" : "Login"} // @demo remove-current-line
     >
       {/* @demo remove-block-start */}
       {isAuthenticated ? (
         <>
           {/* @demo remove-block-end */}
-          <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
+          {/* <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} /> */}
           {/* @demo remove-block-start */}
           <Stack.Screen name="Demo" component={DemoNavigator} />
         </>
